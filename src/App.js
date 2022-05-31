@@ -6,19 +6,24 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      squares: [null, null, null, null, null, null, null, null, null],
-      user1: null
+      squares: ["?", "?", "?", "?", "?", "?", "?", "?", "?"],
+      //user1: ""
     }
   }
   componentDidMount(){
-
+//let player1 = this.setState({user1:"🎃"})
   }
   handleGamePlay = (index) => {
     const { squares } = this.state
-    if(index === user1){
+    
+      console.log(this.state.squares);
       squares[index] = "🎃"
       this.setState({squares: squares})
-    }
+      
+    
+
+   
+  }
 
 
 
@@ -33,7 +38,7 @@ class App extends Component {
             value={value}
             key={index}
             index={index}
-            handleGameplay={this.handleGameplay}
+            handleGamePlay={this.handleGamePlay}
             />
           )
         })}
