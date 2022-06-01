@@ -10,7 +10,7 @@ This project will challenge your knowledge of React but should also be an exerci
 create a section- div tag use flex box to easily organize the grid and style it. Use div to hold the grid and make a map to create an boxes that hold a value in the array.
 - As a user, I can click on a square to mark it.
 - branch mark-square
-- create an even that onClick changes the square clicked to an emoji. 
+- create an even that onClick changes the square clicked to an emoji.
 
 - As a user, my partner can click on a square after me and see their mark.
 branch- user-mark
@@ -19,8 +19,11 @@ branch- user-mark
 - As a user, when either my partner or I win the game (3 squares in a row: horizontally, vertically, or diagonally) I can see a notice telling me which player won. Created branch- win-creation
 Make a variable to store all the winning combinations. Use a for loop to checks the current values in the index to the winning combinations. Use if statement to achieve this.
 
-- As a user, I can't continue playing the game after the game has been won. Create branch -stop-game
+- As a user, I can't continue playing the game after the game has been won. Create branch
+- branch no-play-after-win
+- changed isActive to 'none' for all the divs containing a pointerEvent.
 - As a user, if there are no more squares available, I can see a notice telling me that the game has ended.
+
 - As a user, I can click on a restart button that will clear the game board.
 
 ### 🏔 Stretch Goals
