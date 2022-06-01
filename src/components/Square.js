@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 class Square extends Component {
+
   handleClick = () => {
     //alert(this.props.index)
     this.props.handleGamePlay(this.props.index)
@@ -8,7 +9,9 @@ class Square extends Component {
   render() {
     return(
       <>
-        <div className="square" onClick={this.handleClick}>
+        <div className="square"
+        onClick={this.handleClick} style={{pointerEvents: this.props.isActive[this.props.index]}}
+        >
           {this.props.value}
         </div>
       </>
