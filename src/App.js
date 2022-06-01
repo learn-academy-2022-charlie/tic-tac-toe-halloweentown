@@ -18,9 +18,34 @@ class App extends Component {
       isActive: ['auto', 'auto', 'auto', 'auto', 'auto', 'auto', 'auto', 'auto', 'auto'],
     }
   }
-  componentDidMount(){
-//let player1 = this.setState({user1:"🎃"})
+  
+  calculateWinner = (index) => {
+const winningLines = [ 
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+];
+const {squares, clickCount } = this.state
+  for(let i = 0; i < winningLines.length; i++){
+    const [a ,b, c] = winningLines[i]
+    if(squares[a] && squares[a]=== squares[b] && squares[a]=== squares[c]){
+      if(clickCount%2 === 0){
+        alert("Player 1 has won")
+      }else if(clickCount%2 !== 0){
+        alert("Player 2 has won")
+      }
+    
+    }
+    
   }
+  }
+
+  
 
   handleGamePlay = (index) => {
     //destructured objects for faster access and shorter typing
@@ -28,6 +53,7 @@ class App extends Component {
       //whenever handleGamePlay runs, clickcount+1 -> changes the user symbol
       this.setState({clickCount: clickCount +1})
       //conditional to check if user 1 or user 2, also disables clicked square
+      
       if(clickCount%2 === 0){
       squares[index] = user1
       isActive[index] = 'none'
@@ -54,6 +80,7 @@ class App extends Component {
           {this.state.squares.map((value, index)=>{
             return(
               <Square
+              winner ={this.calculateWinner}
             value={value}
             key={index}
             index={index}

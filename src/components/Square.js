@@ -5,6 +5,7 @@ class Square extends Component {
   handleClick = () => {
     //alert(this.props.index)
     this.props.handleGamePlay(this.props.index)
+    this.props.winner()
   }
   render() {
     return(
